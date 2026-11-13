@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For My Ummi ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(
+        135deg,
+        #fff0f5,
+        #ffd6e5,
+        #ffc1d6
+    );
+    font-family: Georgia, serif;
+    color: #a83259;
+    overflow-x: hidden;
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 25px;
+}
+
+.card {
+    max-width: 430px;
+    width: 100%;
+    padding: 40px 25px;
+    background: rgba(255,255,255,0.55);
+    border: 1px solid white;
+    border-radius: 25px;
+    box-shadow: 0 10px 35px rgba(190,70,110,0.15);
+    backdrop-filter: blur(10px);
+}
+
+.flower {
+    font-size: 55px;
+    margin-bottom: 20px;
+    animation: float 3s infinite ease-in-out;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 18px;
+}
+
+.subtitle {
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+button {
+    background: #e75480;
+    color: white;
+    border: none;
+    padding: 15px 28px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px #e7548040;
+}
+
+button:hover {
+    background: #d94370;
+}
+
+#letter {
+    display: none;
+    margin-top: 30px;
+    line-height: 1.9;
+    animation: appear 1s ease;
+}
+
+#letter h2 {
+    margin-bottom: 15px;
+    font-size: 26px;
+}
+
+.signature {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    font-size: 20px;
+    animation: rise 7s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes float {
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes rise {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+    <div class="flower">🌷</div>
+
+    <h1>Happy Birthday, Ummi! ❤️</h1>
+
+    <p class="subtitle">
+        To someone who makes my world
+        a little more beautiful...
+
+        <br><br>
+
+        I have a little surprise waiting for you.
+        Something made with lots of love.
+    </p>
+
+    <button onclick="showLetter()">
+        Open Your Surprise 💌
+    </button>
+
+    <div id="letter">
+
+        <h2>My Dearest Ummi ❤️</h2>
+
+        <p>
+            Today is your special day,
+            and I wish I could be there
+            to celebrate it with you.
+
+            <br><br>
+
+            Even though distance keeps us apart,
+            you remain an important part
+            of my life.
+
+            <br><br>
+
+            I hope this new year of your life
+            brings you endless happiness,
+            beautiful memories and everything
+            your heart wishes for.
+
+            <br><br>
+
+            Never forget how special you are.
+            You deserve all the love and happiness
+            in this world.
+
+            <br><br>
+
+            Happy Birthday once again, Jaan! 🌸
+        </p>
+
+        <div class="signature">
+            With Love, Always ❤️
+        </div>
+
+    </div>
+
+</div>
+</div>
+
+<script>
+
+function showLetter() {
+    document.getElementById("letter").style.display = "block";
+}
+
+function createHeart() {
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+    heart.innerHTML = ["❤️", "💕", "💗", "🌸"][Math.floor(Math.random()*4)];
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (5 + Math.random() * 4) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 9000);
+}
+
+setInterval(createHeart, 700);
+
+</script>
+
+</body>
+</html>
